@@ -262,7 +262,12 @@ class Homescreen extends StatelessWidget {
                                         textAlign: TextAlign.center,
 
                                         style: TextStyle(
-                                          color: const Color.fromARGB(255, 225, 224, 224),
+                                          color: const Color.fromARGB(
+                                            255,
+                                            225,
+                                            224,
+                                            224,
+                                          ),
                                           fontSize: 17,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -342,7 +347,8 @@ class Homescreen extends StatelessWidget {
                                 Padding(
                                   padding: EdgeInsets.fromLTRB(2, 10, 2, 4),
                                   child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Text(
                                         recommendedlist[index]["price"],
@@ -356,7 +362,7 @@ class Homescreen extends StatelessWidget {
                                         " / Night",
                                         style: TextStyle(
                                           fontSize: 15,
-                                           color: Color(0xFF424242),
+                                          color: Color(0xFF424242),
 
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -397,7 +403,12 @@ class Homescreen extends StatelessWidget {
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.w800,
-                                      color: const Color.fromARGB(255, 73, 72, 72),
+                                      color: const Color.fromARGB(
+                                        255,
+                                        73,
+                                        72,
+                                        72,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -406,7 +417,7 @@ class Homescreen extends StatelessWidget {
                                   child: Text(
                                     recommendedlist[index]["subtitle"],
                                     style: TextStyle(
-                                     color: Color(0xFF717171),
+                                      color: Color(0xFF717171),
 
                                       fontSize: 15,
                                       fontWeight: FontWeight.w500,
@@ -580,7 +591,7 @@ class Mostviewed extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 27,
                     fontWeight: FontWeight.bold,
-                    color:Colors.black,
+                    color: Colors.black,
                   ),
                 ),
                 Text(
@@ -592,7 +603,7 @@ class Mostviewed extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                 Icon(Icons.bolt, color: Colors.orange, size: 17), 
+                Icon(Icons.bolt, color: Colors.orange, size: 17),
                 Spacer(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -629,7 +640,7 @@ class Mostviewed extends StatelessWidget {
             child: Text(
               data["subtitle"],
               style: TextStyle(
-               color: Color(0xFF717171),
+                color: Color(0xFF717171),
 
                 fontSize: 15,
                 fontWeight: FontWeight.w500,

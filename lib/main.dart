@@ -115,12 +115,12 @@ class Homescreen extends StatelessWidget {
                   Container(
                     height: constraints.maxWidth * 0.50,
                     width: double.infinity,
-                    color: const Color(0xFFF5F4FA),
+                    color: Color(0xFFF5F4FA),
                     padding: EdgeInsets.only(
                       left: 25,
                       right: 16,
-                      top: 25,
-                      bottom: 16,
+                      top: 24,
+                      bottom: 26,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -137,36 +137,40 @@ class Homescreen extends StatelessWidget {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Expanded(
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(15),
+                            Container(
+                              width: constraints.maxWidth * 0.72,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 16,
+                                  vertical: 13,
                                 ),
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 16,
-                                    vertical: 15,
-                                  ),
-                                  child: Row(
-                                    children: [
-                                      Icon(Icons.search, size: 23),
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.search, size: 23),
 
-                                      SizedBox(width: 15),
-                                      Text(
-                                        "Where did you go?",
-                                        style: TextStyle(
-                                          fontSize: 17,
-                                          color: const Color.fromARGB(255, 76, 76, 76),
-                                          fontWeight: FontWeight.bold,
+                                    SizedBox(width: 15),
+                                    Text(
+                                      "Where did you go?",
+                                      style: TextStyle(
+                                        fontSize: 17,
+                                        color: const Color.fromARGB(
+                                          255,
+                                          76,
+                                          76,
+                                          76,
                                         ),
+                                        fontWeight: FontWeight.w800,
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
-                            SizedBox(width: 12),
+                            SizedBox(width: 11),
                             Container(
                               decoration: BoxDecoration(
                                 color: Colors.white,
@@ -181,7 +185,7 @@ class Homescreen extends StatelessWidget {
                     ),
                   ),
 
-                  SizedBox(height: 38),
+                  SizedBox(height: 24),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25),
                     child: Text(
@@ -240,7 +244,9 @@ class Homescreen extends StatelessWidget {
                                             end: Alignment.bottomCenter,
                                             colors: [
                                               Colors.transparent,
-                                              Colors.black.withValues(alpha: 0.95),
+                                              Colors.black.withValues(
+                                                alpha: 0.75,
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -256,9 +262,9 @@ class Homescreen extends StatelessWidget {
                                         textAlign: TextAlign.center,
 
                                         style: TextStyle(
-                                          color: Colors.white,
+                                          color: const Color.fromARGB(255, 225, 224, 224),
                                           fontSize: 17,
-                                          fontWeight: FontWeight.bold,
+                                          fontWeight: FontWeight.w600,
                                         ),
                                       ),
                                     ),
@@ -292,7 +298,7 @@ class Homescreen extends StatelessWidget {
                       itemCount: recommendedlist.length,
                       itemBuilder: (context, index) {
                         return Padding(
-                          padding: EdgeInsets.only(right: 14),
+                          padding: EdgeInsets.only(right: 22),
                           child: Container(
                             width: constraints.maxWidth * 0.62,
                             decoration: BoxDecoration(
@@ -316,14 +322,17 @@ class Homescreen extends StatelessWidget {
                                   child: Align(
                                     alignment: Alignment.topRight,
                                     child: Padding(
-                                      padding: EdgeInsets.all(8),
+                                      padding: EdgeInsets.only(
+                                        top: 11,
+                                        right: 11,
+                                      ),
                                       child: CircleAvatar(
-                                        radius: 20,
+                                        radius: 22,
                                         backgroundColor: Colors.white,
                                         child: Icon(
                                           Icons.favorite,
                                           color: Colors.grey[400],
-                                          size: 28,
+                                          size: 30,
                                         ),
                                       ),
                                     ),
@@ -331,23 +340,31 @@ class Homescreen extends StatelessWidget {
                                 ),
 
                                 Padding(
-                                  padding: EdgeInsets.fromLTRB(10, 9, 10, 4),
+                                  padding: EdgeInsets.fromLTRB(2, 10, 2, 4),
                                   child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
                                     children: [
                                       Text(
                                         recommendedlist[index]["price"],
                                         style: TextStyle(
                                           fontSize: 22,
                                           fontWeight: FontWeight.bold,
+                                          color: Colors.black,
                                         ),
                                       ),
                                       Text(
-                                        " / Night⚡",
+                                        " / Night",
                                         style: TextStyle(
-                                          fontSize: 14,
+                                          fontSize: 15,
+                                           color: Color(0xFF424242),
+
                                           fontWeight: FontWeight.bold,
                                         ),
+                                      ),
+                                      Icon(
+                                        Icons.bolt,
+                                        color: Colors.orange,
+                                        size: 16,
                                       ),
                                       Spacer(),
                                       Row(
@@ -357,10 +374,15 @@ class Homescreen extends StatelessWidget {
                                           Icon(
                                             Icons.star,
                                             color: Colors.red,
-                                            size: 15,
+                                            size: 16,
                                           ),
                                           Text(
                                             recommendedlist[index]["rating"],
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w700,
+                                              color: Colors.black,
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -369,23 +391,25 @@ class Homescreen extends StatelessWidget {
                                 ),
 
                                 Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 10),
+                                  padding: EdgeInsets.symmetric(horizontal: 2),
                                   child: Text(
                                     recommendedlist[index]["title"],
                                     style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w800,
+                                      color: const Color.fromARGB(255, 73, 72, 72),
                                     ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.only(left: 10, top: 5),
+                                  padding: EdgeInsets.only(left: 2, top: 4),
                                   child: Text(
                                     recommendedlist[index]["subtitle"],
                                     style: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
+                                     color: Color(0xFF717171),
+
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.w500,
                                     ),
                                   ),
                                 ),
@@ -457,7 +481,7 @@ class Homescreen extends StatelessWidget {
                                   vertical: 7,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: Colors.red,
+                                  color: const Color.fromARGB(255, 252, 99, 89),
                                   borderRadius: BorderRadius.circular(35),
                                 ),
                                 child: Text(
@@ -532,14 +556,14 @@ class Mostviewed extends StatelessWidget {
             child: Align(
               alignment: Alignment.topRight,
               child: Padding(
-                padding: EdgeInsets.all(8),
+                padding: EdgeInsets.only(top: 13, right: 13),
                 child: CircleAvatar(
-                  radius: 20,
+                  radius: 22,
                   backgroundColor: Colors.white,
                   child: Icon(
                     Icons.favorite,
                     color: Colors.grey[400],
-                    size: 28,
+                    size: 30,
                   ),
                 ),
               ),
@@ -547,24 +571,41 @@ class Mostviewed extends StatelessWidget {
           ),
 
           Padding(
-            padding: EdgeInsets.fromLTRB(10, 10, 10, 3),
+            padding: EdgeInsets.fromLTRB(2, 14, 2, 6),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   data["price"],
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 27,
+                    fontWeight: FontWeight.bold,
+                    color:Colors.black,
+                  ),
                 ),
                 Text(
-                  " / Night⚡",
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  " / Night",
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Color(0xFF424242),
+
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
+                 Icon(Icons.bolt, color: Colors.orange, size: 17), 
                 Spacer(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Icon(Icons.star, color: Colors.red, size: 15),
-                    Text(data["rating"]),
+                    Text(
+                      data["rating"],
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ],
                 ),
               ],
@@ -572,25 +613,26 @@ class Mostviewed extends StatelessWidget {
           ),
 
           Padding(
-            padding: EdgeInsets.only(left: 10),
+            padding: EdgeInsets.only(left: 2),
             child: Text(
               data["title"],
               style: TextStyle(
-                color: Colors.black,
+                color: const Color.fromARGB(255, 73, 72, 72),
                 fontWeight: FontWeight.bold,
-                fontSize: 17,
+                fontSize: 18,
               ),
             ),
           ),
 
           Padding(
-            padding: EdgeInsets.only(left: 10, top: 3,bottom: 16),
+            padding: EdgeInsets.only(left: 2, top: 2, bottom: 6),
             child: Text(
               data["subtitle"],
               style: TextStyle(
-                color: Colors.grey,
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
+               color: Color(0xFF717171),
+
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
               ),
             ),
           ),
